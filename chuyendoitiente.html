@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyendoitiente</title>
+</head>
+<body>
+<h1> Ứng Dụng Chuyển Tiền</h1>
+<from>
+    <table width="50%">
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th><input type="button" value="Convert" onclick = Convert()></th>
+        </tr>
+        <tr>
+            <td><input type="text" id="Amount" placeholder="Nhập Số Tiền Cần Đổi"></td>
+            <td><select name="From Currency" id="From_Currency">
+                <option value="VND"> Việt Nam Đồng </option>
+                <option value="EUR"> EURO</option>
+            </select></td>
+            <td><select name="To Currency" id="To_Currency">
+                <option value="USD"> Đô La Mỹ</option>
+            </select></td>
+        </tr>
+    </table>
+</from><p>Số tiền khi đổi: <span id="changed"></span></p>
+<script>
+    function Convert() {
+        let Amount= document.getElementById('Amount').value;
+        let From_Currency= document.getElementById('From_Currency').value;
+        let To_Currency= document.getElementById('To_Currency').value;
+        if (From_Currency ==='VND'&& To_Currency==='USD'){
+            document.getElementById('changed').innerHTML = Amount/23500;
+        }
+        if (From_Currency ==='EUR'&& To_Currency==='USD'){
+            document.getElementById('changed').innerHTML = Amount*1352;
+        }
+    }
+</script>
+</body>
+</html>
